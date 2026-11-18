@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEase | Online Shopping</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">Shop<span>Ease</span></a>
+    <nav>
+      <a href="#home">Home</a><a href="#products">Products</a><a href="#about">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">♡ <span id="wishCount">0</span></button>
+      <button class="icon-btn" id="cartBtn" aria-label="Shopping cart">🛒 <span id="cartCount">0</span></button>
+      <button class="login-btn" id="authBtn">Login</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">A LITTLE JOY IN EVERY ORDER</p>
+        <h1>Find your next<br><span>favourite thing.</span></h1>
+        <p>Discover everyday essentials, lovely styles and little things that make you smile.</p>
+        <a class="primary-btn" href="#products">Shop now <span>→</span></a>
+      </div>
+      <div class="hero-art"><div class="art-circle">SHOP<br><b>HAPPY</b></div><div class="floating-card">♡<br><small>Made for you</small></div></div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-heading"><div><p class="eyebrow">OUR COLLECTION</p><h2>Explore products</h2></div>
+        <div class="filters">
+          <input id="searchInput" type="search" placeholder="Search products...">
+          <select id="categoryFilter"><option value="All">All categories</option><option>Fashion</option><option>Beauty</option><option>Electronics</option><option>Home</option></select>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty hidden" id="emptyMessage">No products found. Try another search.</p>
+    </section>
+
+    <section class="promo" id="about"><div><p class="eyebrow">WHY SHOP WITH US?</p><h2>Simple shopping.<br>Happy moments.</h2></div><p>Browse a curated collection, save your favourites and manage your cart in one easy place.</p></section>
+  </main>
+
+  <footer><a class="logo" href="#">Shop<span>Ease</span></a><p>Student mini project · Front-end demo</p><small>© 2026 ShopEase. Demo website only.</small></footer>
+
+  <div class="overlay hidden" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Shopping panel">
+    <div class="drawer-head"><h2 id="drawerTitle">Your cart</h2><button class="close-btn" id="closeDrawer">×</button></div>
+    <div id="drawerContent"></div>
+  </aside>
+
+  <dialog id="authDialog">
+    <button class="close-btn dialog-close" id="closeAuth">×</button>
+    <p class="eyebrow">WELCOME TO SHOPEASE</p><h2 id="authTitle">Login</h2>
+    <form id="authForm">
+      <label>Name <input id="authName" placeholder="Your name" autocomplete="name"></label>
+      <label>Email <input id="authEmail" type="email" placeholder="you@example.com" required></label>
+      <label>Password <input id="authPassword" type="password" placeholder="At least 4 characters" minlength="4" required></label>
+      <button class="primary-btn full" type="submit" id="authSubmit">Login</button>
+    </form>
+    <p class="switch-auth" id="switchAuth">New here? <button type="button">Create an account</button></p>
+    <small class="note">Demo only: account details are saved in this browser, not sent to a server.</small>
+  </dialog>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
